@@ -19,9 +19,12 @@ class NavBar extends React.Component {
   render() {
     return (
       <nav>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
         {this.state.topics.map((topic) => {
           return (
-            <Link to={`/topics/${topic.slug}`} key={topic.slug}>
+            <Link to={`/articles/topics/${topic.slug}`} key={topic.slug}>
               <button>{topic.slug}</button>{" "}
             </Link>
           );
