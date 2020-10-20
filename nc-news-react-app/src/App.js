@@ -7,6 +7,7 @@ import { Router, Link } from "@reach/router";
 import ArticlesList from "./Components/ArticlesList";
 import "./App.css";
 import SingleArticle from "./Components/SingleArticle";
+import Error from "./Components/Error";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <ArticlesList path="/articles/topics/:topic" />
 
         <SingleArticle path="/articles/:article_id" />
+        <Error default />
       </Router>
       <Footer />
     </div>

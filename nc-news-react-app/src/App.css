@@ -39,3 +39,9 @@ footer {
 .errorMessage {
   color: rgb(172, 66, 66);
 }
+.nav_home {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  transform: scale(2);
+}

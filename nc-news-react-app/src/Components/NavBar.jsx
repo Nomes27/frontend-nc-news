@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "@reach/router";
+import HomeIcon from "@material-ui/icons/Home";
 
 class NavBar extends React.Component {
   state = {
@@ -20,7 +21,12 @@ class NavBar extends React.Component {
     return (
       <nav>
         <Link to="/">
-          <button>Home</button>
+          <HomeIcon
+            className="nav_home"
+            aria-label="homepage"
+            fontSize="large"
+            style={{ fill: "red" }}
+          />
         </Link>
         {this.state.topics.map((topic) => {
           return (
