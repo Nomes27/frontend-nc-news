@@ -5,6 +5,7 @@ class SingleArticle extends React.Component {
   state = {
     article: {},
     isLoading: true,
+    error: null,
   };
   componentDidMount() {
     axios
@@ -13,11 +14,25 @@ class SingleArticle extends React.Component {
       )
       .then(({ data: { article } }) => {
         this.setState({ article: article, isLoading: false });
+      })
+      .catch((err) => {
+        this.setState({
+          error: {
+            status: err.response.status,
+            message: err.response.data.msg,
+          },
+        });
       });
   }
   render() {
-    console.log(this.state.article);
-    if (this.state.isLoading) return <p>Article Loading...</p>;
+    console.log(this.state);
+    if (this.state.error !== null)
+      return (
+        <p className="errorMessage">
+          Error! status {this.state.error.status} - {this.state.error.message}
+        </p>
+      );
+    else if (this.state.isLoading) return <p>Article Loading...</p>;
     return (
       <>
         <article className="singleArticle">

@@ -21,3 +21,21 @@ footer {
   text-align: center;
   margin: auto;
 }
+.comments {
+  background-color: lightgray;
+  width: 70%;
+  margin: auto;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  margin-bottom: 1rem;
+}
+.comments_title {
+  padding-top: 2rem;
+}
+.comments_body {
+  width: 60%;
+  margin: auto;
+}
+.errorMessage {
+  color: rgb(172, 66, 66);
+}

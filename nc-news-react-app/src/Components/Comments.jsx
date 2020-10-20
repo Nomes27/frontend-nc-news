@@ -17,33 +17,39 @@ class Comments extends React.Component {
       this.setState({ comments: data.comments });
     });
   }
-  increaseVote(event) {
-    console.log(event.target.value);
-    console.log(event);
+  incVote(event) {
+    //PATCH /api/comments/:comment_id
+    /*
+    Axios.patch(
+      `https://frontend-nc-news.herokuapp.com/api/comments/${}`,
+      { inc_votes: 1 }
+    );*/
+    console.log(event.target);
+
+    console.log("function working");
   }
-  decreaseVote() {}
 
   render() {
     return (
       <>
-        <h2>Comments</h2>
+        <h2 className="comments_title">Comments</h2>
         {this.state.comments.map((comment) => {
           return (
-            <section key={comment.comment_id}>
+            <section className="comments" key={comment.comment_id}>
               <h4>{comment.author}</h4>
-              <p>{comment.body}</p>
+              <p className="comments_body">{comment.body}</p>
               <h4>
                 <ThumbUpIcon
                   fontSize="small"
                   style={{ fill: "green" }}
-                  onClick={this.increaseVote}
                   value={comment.votes}
+                  onClick={this.incVote}
                 />
                 {comment.votes}
                 <ThumbDownIcon
                   fontSize="small"
                   color="secondary"
-                  onClick={this.decreaseVote}
+                  onClick={this.decVote}
                 />
               </h4>
             </section>
