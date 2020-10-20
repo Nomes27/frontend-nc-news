@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
 
 class NavBar extends React.Component {
   state = {

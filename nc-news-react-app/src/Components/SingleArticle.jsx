@@ -3,7 +3,8 @@ import axios from "axios";
 
 class SingleArticle extends React.Component {
   state = {
-    article: [],
+    article: {},
+    isLoading: true,
   };
   componentDidMount() {
     axios
@@ -11,10 +12,11 @@ class SingleArticle extends React.Component {
         `https://frontend-nc-news.herokuapp.com/api/articles/${this.props.article_id}`
       )
       .then(({ data: { article } }) => {
-        this.setState({ article: article });
+        this.setState({ article: article, isLoading: false });
       });
   }
   render() {
+    if (this.state.isLoading) return <p>Article Loading...</p>;
     return (
       <article className="singleArticle">
         <h1>{this.state.article.title}</h1>

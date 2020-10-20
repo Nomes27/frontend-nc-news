@@ -1,10 +1,11 @@
 import React from "react";
 import axios from "axios";
 import ArticleCard from "./ArticleCard";
-import { Router } from "@reach/router";
+
 class ArticlesList extends React.Component {
   state = {
     articles: [],
+    isLoading: true,
   };
 
   componentDidMount() {
@@ -14,7 +15,7 @@ class ArticlesList extends React.Component {
         params: { topic: this.props.topic },
       })
       .then(({ data: { articles } }) => {
-        this.setState({ articles });
+        this.setState({ articles, isLoading: false });
       });
   }
   componentDidUpdate(previousProps) {
@@ -24,12 +25,14 @@ class ArticlesList extends React.Component {
           params: { topic: this.props.topic },
         })
         .then(({ data: { articles } }) => {
-          this.setState({ articles });
+          this.setState({ articles, isLoading: false });
         });
     }
   }
 
   render() {
+    console.log(this.state);
+    if (this.state.isLoading) return <p>Please wait, articles loading...</p>;
     return <ArticleCard articles={this.state.articles} />;
   }
 }
