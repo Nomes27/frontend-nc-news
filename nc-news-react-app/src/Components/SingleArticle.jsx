@@ -16,6 +16,7 @@ class SingleArticle extends React.Component {
       });
   }
   render() {
+    console.log(this.state.article);
     if (this.state.isLoading) return <p>Article Loading...</p>;
     return (
       <>
@@ -24,7 +25,7 @@ class SingleArticle extends React.Component {
           <h3>{this.state.article.author}</h3>
           <p>{this.state.article.body}</p>
         </article>
-        <Comments />
+        <Comments id={this.state.article.article_id} />
       </>
     );
   }
