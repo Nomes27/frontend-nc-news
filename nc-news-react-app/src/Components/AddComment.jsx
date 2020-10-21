@@ -5,6 +5,7 @@ class AddComment extends React.Component {
   state = {
     comment: "",
     username: "jessjelly",
+    submitted: false,
   };
   onSubmit = (event) => {
     event.preventDefault();
@@ -15,25 +16,31 @@ class AddComment extends React.Component {
         username: this.state.username,
       }
     );
-    console.log("submit function working"); //send off comment from state
+    this.setState({ comment: "", submitted: true });
   };
-  //axios.post
+  //could do with a message to tell usertheir comment has been submitted
 
   handleChange = (event) => {
     this.setState({ comment: event.target.value });
   };
   render() {
     return (
-      <form className="comments_post">
-        <label htmlFor="body">Add a comment</label>
-        <input
-          type="text"
-          id="body"
-          name="body"
-          onChange={this.handleChange}
-        ></input>
-        <input type="submit" value="Submit" onClick={this.onSubmit}></input>
-      </form>
+      <>
+        <form className="comments_post">
+          <label htmlFor="body">Add a comment</label>
+          <input
+            type="text"
+            id="body"
+            name="body"
+            onChange={this.handleChange}
+            value={this.state.comment}
+          ></input>
+          <input type="submit" value="Submit" onClick={this.onSubmit}></input>
+        </form>
+        {this.state.submitted && (
+          <p>Your comment has been successfully posted</p>
+        )}
+      </>
     );
   }
 }
