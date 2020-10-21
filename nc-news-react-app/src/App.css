@@ -50,6 +50,9 @@ footer {
   width: 60%;
   margin: auto;
 }
+.comments_post {
+  margin-bottom: 1rem;
+}
 .errorMessage {
   color: rgb(175, 64, 64);
 }

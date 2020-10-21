@@ -1,15 +1,15 @@
 import React from "react";
-/*
+
 import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 import NewReleasesOutlinedIcon from "@material-ui/icons/NewReleasesOutlined";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
-*/
+/*
 import {
   FavoriteBorderOutlinedIcon,
   NewReleasesOutlinedIcon,
   TrendingUpIcon,
 } from "@material-ui/icons";
-
+*/
 const SortByNav = (props) => {
   return (
     <nav className="sortnavbar">
