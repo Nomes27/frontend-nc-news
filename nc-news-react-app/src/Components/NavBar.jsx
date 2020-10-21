@@ -25,16 +25,21 @@ class NavBar extends React.Component {
             className="nav_home"
             aria-label="homepage"
             fontSize="large"
-            style={{ fill: "red" }}
+            style={{ fill: "white" }}
           />
         </Link>
-        {this.state.topics.map((topic) => {
-          return (
-            <Link to={`/articles/topics/${topic.slug}`} key={topic.slug}>
-              <button>{topic.slug}</button>{" "}
-            </Link>
-          );
-        })}
+        <div className="nav_container">
+          {this.state.topics.map((topic) => {
+            return (
+              <Link to={`/articles/topics/${topic.slug}`} key={topic.slug}>
+                <button className="nav_link">
+                  {topic.slug[0].toUpperCase() + topic.slug.slice(1)}
+                  {/*make topics have cap letters */}
+                </button>{" "}
+              </Link>
+            );
+          })}
+        </div>
       </nav>
     );
   }

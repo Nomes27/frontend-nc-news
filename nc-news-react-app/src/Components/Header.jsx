@@ -1,11 +1,7 @@
 import React from "react";
 
 const Header = () => {
-  return (
-    <header>
-      <h1>NC News</h1>
-    </header>
-  );
+  return <h1 className="home_title">NC NEWS</h1>;
 };
 
 export default Header;

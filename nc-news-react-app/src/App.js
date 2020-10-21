@@ -12,10 +12,11 @@ import Error from "./Components/Error";
 function App() {
   return (
     <div className="App">
-      <Header />
+      <header className="header">
+        <Header />
 
-      <NavBar />
-
+        <NavBar />
+      </header>
       <Router>
         <ArticlesList path="/" />
         <ArticlesList path="/articles/topics/:topic" />
