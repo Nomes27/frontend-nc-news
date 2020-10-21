@@ -1,7 +1,10 @@
 import React from "react";
-import Axios from "axios";
+import axios from "axios";
+/*
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
+*/
+import { ThumbUpIcon, ThumbDownIcon } from "@material-ui/icons";
 
 class Comments extends React.Component {
   state = {
@@ -9,13 +12,15 @@ class Comments extends React.Component {
   };
 
   componentDidMount() {
-    Axios.get(
-      `https://frontend-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`
-    ).then(({ data }) => {
-      //data off res
-      console.log(data.comments);
-      this.setState({ comments: data.comments });
-    });
+    axios
+      .get(
+        `https://frontend-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`
+      )
+      .then(({ data }) => {
+        //data off res
+        console.log(data.comments);
+        this.setState({ comments: data.comments });
+      });
   }
   incVote(event) {
     //PATCH /api/comments/:comment_id
