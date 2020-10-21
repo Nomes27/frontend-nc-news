@@ -25,17 +25,13 @@ class Comments extends React.Component {
       });
   }
   alterVote = (voteValue, id) => {
-    console.log(id);
     this.setState((prevState) => ({
       voteCount: prevState.voteCount + voteValue,
       commentid: id,
     }));
-    //PATCH /api/comments/:comment_id
-    /*
-    Axios.patch(
-      `https://frontend-nc-news.herokuapp.com/api/comments/${}`,
-      { inc_votes: 1 }
-    );*/
+    axios.patch(`https://frontend-nc-news.herokuapp.com/api/comments/${id}`, {
+      inc_votes: voteValue,
+    });
 
     console.log("function working");
   };
