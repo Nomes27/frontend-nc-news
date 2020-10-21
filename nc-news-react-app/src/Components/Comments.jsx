@@ -10,6 +10,7 @@ class Comments extends React.Component {
   state = {
     comments: [],
     voteCount: 0,
+    commentid: null,
   };
 
   componentDidMount() {
@@ -23,9 +24,11 @@ class Comments extends React.Component {
         this.setState({ comments: data.comments });
       });
   }
-  alterVote = (voteValue) => {
+  alterVote = (voteValue, id) => {
+    console.log(id);
     this.setState((prevState) => ({
       voteCount: prevState.voteCount + voteValue,
+      commentid: id,
     }));
     //PATCH /api/comments/:comment_id
     /*
@@ -43,17 +46,22 @@ class Comments extends React.Component {
         <h2 className="comments_title">Comments</h2>
         <AddComment id={this.props.id} />
 
-        {this.state.comments.map((comment) => {
+        {this.state.comments.map((comment, index) => {
           return (
             <section className="comments" key={comment.comment_id}>
               <h4>{comment.author}</h4>
               <p className="comments_body">{comment.body}</p>
               <h4>
-                <button onClick={() => this.alterVote(1)}>
+                <button onClick={() => this.alterVote(1, comment.comment_id)}>
                   <ThumbUpIcon fontSize="small" style={{ fill: "green" }} />
                 </button>
-                {comment.votes + this.state.voteCount}
-                <button onClick={() => this.alterVote(-1)}>
+
+                {comment.comment_id === this.state.commentid ? ( //if the comment_id equals the same one in state then increase the count, else just return the count
+                  <>{comment.votes + this.state.voteCount}</>
+                ) : (
+                  <>{comment.votes}</>
+                )}
+                <button onClick={() => this.alterVote(-1, comment.comment_id)}>
                   <ThumbDownIcon fontSize="small" color="secondary" />
                 </button>
               </h4>
