@@ -52,7 +52,7 @@ footer {
   font-size: 0.8rem;
 }
 .comments {
-  background-color: lightgray;
+  background-color: rgb(224, 228, 230);
   width: 70%;
   margin: auto;
   padding-top: 0.1rem;
@@ -124,6 +124,21 @@ footer {
   text-align: center;
   margin: auto;
 }
+.login_form {
+  right: 1rem;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+}
+.login_form_text {
+  width: 7rem;
+}
+.login_form_submit {
+  padding: 0.3rem;
+}
+.deleteComment_message {
+  color: red;
+}
 @media (min-width: 700px) {
   .nav_home {
     position: absolute;
@@ -153,6 +168,12 @@ footer {
     background-image: url("./images/email-pattern.png");
   }
   .comments {
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(224, 228, 230);
+  }
+  .singleArticle {
+    background-color: rgb(224, 228, 230);
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
