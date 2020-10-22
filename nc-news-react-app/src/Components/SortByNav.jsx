@@ -10,6 +10,7 @@ import {
   TrendingUpIcon,
 } from "@material-ui/icons";
 */
+//passing sortbyfunc from articleslist to use in this component
 const SortByNav = (props) => {
   return (
     <nav className="sortnavbar">

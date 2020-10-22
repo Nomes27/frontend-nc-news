@@ -4,21 +4,26 @@
 .home_title {
   font-size: 2.5rem;
   font-family: "Sintony", sans-serif;
+  color: white;
 }
 .header {
-  background-color: rgb(175, 165, 152); /*#AFA598*/
+  background-color: rgb(8, 16, 34); /*#081022*/
+
   padding-top: 2rem;
-}
+} /*rgb(175, 165, 152); */ /*#AFA598*/
 
 footer {
   background-color: #98af9e;
   bottom: 0;
   width: 100%;
   height: 2.5rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
+  font-family: "Sintony", sans-serif;
 }
 .articleCard {
   border: rgb(175, 165, 152) solid 1px;
@@ -27,13 +32,24 @@ footer {
   text-decoration: none;
   color: black;
 }
-.articleCard:hover {
-  background-color: rgb(233, 227, 227);
+.articleCard_title {
+  font-family: "Sintony", sans-serif;
+  font-size: 1.2rem;
 }
-.singleArticle {
-  width: 80%;
-  text-align: center;
-  margin: auto;
+.articleCard_author {
+  font-size: 0.8rem;
+}
+.articleCard:hover {
+  background-color: rgb(229, 226, 226);
+} /*rgb(233, 227, 227)*/
+
+.articleCard_comments {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.articleCard_date {
+  font-size: 0.8rem;
 }
 .comments {
   background-color: lightgray;
@@ -67,16 +83,20 @@ footer {
   grid-template-columns: 1fr 1fr 1fr;
 }
 .nav_link {
-  border: rgb(212, 206, 206) solid 1px;
+  /*rgb(212, 206, 206)*/
+  border: rgb(169, 184, 212) solid 1px;
   background-color: inherit;
   width: 100%;
-  padding-top: 0.5rem;
+  padding-top: 0.7rem;
   padding-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  color: white;
+  font-family: "Sintony", sans-serif;
 }
 .nav_link:hover {
-  background-color: ivory;
+  background-color: white;
+  color: black;
 }
 .sortnavbar {
   right: 0;
@@ -95,11 +115,44 @@ footer {
 .sortnavbar_icon {
   padding-left: 0.5rem;
 }
+.singleArticle_title {
+  font-family: "Sintony", sans-serif;
+}
+.singleArticle {
+  width: 70%;
+  line-height: 2rem;
+  text-align: center;
+  margin: auto;
+}
 @media (min-width: 700px) {
   .nav_home {
     position: absolute;
     top: 3rem;
     left: 3rem;
     transform: scale(2);
+  }
+  footer {
+    font-size: 1.4rem;
+  }
+  .articleCard_title {
+    font-family: "Sintony", sans-serif;
+    font-size: 1.5rem;
+  }
+  .articleCard_author {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1000px) {
+  .articleCard {
+    width: 65%;
+    margin: auto;
+    background-color: white;
+  }
+  .App {
+    /*background-color: rgb(200, 204, 204);*/
+    background-image: url("./images/email-pattern.png");
+  }
+  .comments {
+    background-color: rgb(236, 236, 236);
   }
 }

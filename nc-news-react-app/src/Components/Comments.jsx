@@ -51,7 +51,7 @@ class Comments extends React.Component {
                 <button onClick={() => this.alterVote(1, comment.comment_id)}>
                   <ThumbUpIcon fontSize="small" style={{ fill: "green" }} />
                 </button>
-                {console.log(comment.comment_id)}
+
                 {comment.comment_id === this.state.commentid ? ( //if the comment_id equals the same one in state then increase the count, else just return the count
                   <>{comment.votes + this.state.voteCount}</>
                 ) : (

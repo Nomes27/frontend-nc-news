@@ -35,7 +35,7 @@ class SingleArticle extends React.Component {
     return (
       <>
         <article className="singleArticle">
-          <h1>{this.state.article.title}</h1>
+          <h1 className="singleArticle_title">{this.state.article.title}</h1>
           <h3>{this.state.article.author}</h3>
           <p>{this.state.article.body}</p>
         </article>
