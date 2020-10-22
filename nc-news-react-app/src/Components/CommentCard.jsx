@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import DeleteComment from "./DeleteComment";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 
@@ -45,6 +46,10 @@ class CommentCard extends React.Component {
             <ThumbDownIcon fontSize="small" color="secondary" />
           </button>
         </h4>
+        <DeleteComment
+          comment_id={comment.comment_id}
+          author={comment.author}
+        />
       </section>
     );
   }
