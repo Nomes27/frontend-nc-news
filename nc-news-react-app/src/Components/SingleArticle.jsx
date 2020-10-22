@@ -25,6 +25,7 @@ class SingleArticle extends React.Component {
       });
   }
   render() {
+    console.log(this.props.username);
     if (this.state.error !== null)
       return (
         <p className="errorMessage">
@@ -39,7 +40,10 @@ class SingleArticle extends React.Component {
           <h3>{this.state.article.author}</h3>
           <p>{this.state.article.body}</p>
         </article>
-        <Comments id={this.state.article.article_id} />
+        <Comments
+          id={this.state.article.article_id}
+          userlogin={this.props.userlogin}
+        />
       </>
     );
   }

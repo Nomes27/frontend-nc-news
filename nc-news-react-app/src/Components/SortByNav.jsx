@@ -13,7 +13,7 @@ import {
 //passing sortbyfunc from articleslist to use in this component
 const SortByNav = (props) => {
   return (
-    <nav className="sortnavbar">
+    <section className="sortnavbar">
       <button
         className="sortnavbar_link"
         onClick={props.sortByFunc}
@@ -44,7 +44,7 @@ const SortByNav = (props) => {
           style={{ fill: "white" }}
         />
       </button>
-    </nav>
+    </section>
   );
 };
 export default SortByNav;

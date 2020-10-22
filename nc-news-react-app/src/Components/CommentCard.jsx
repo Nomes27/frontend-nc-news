@@ -49,6 +49,7 @@ class CommentCard extends React.Component {
         <DeleteComment
           comment_id={comment.comment_id}
           author={comment.author}
+          userlogin={this.props.userlogin}
         />
       </section>
     );

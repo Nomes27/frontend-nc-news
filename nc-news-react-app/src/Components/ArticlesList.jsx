@@ -10,7 +10,6 @@ class ArticlesList extends React.Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     axios
       .get("https://frontend-nc-news.herokuapp.com/api/articles", {
         params: { topic: this.props.topic },

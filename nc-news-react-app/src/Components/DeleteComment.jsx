@@ -8,7 +8,7 @@ class DeleteComment extends React.Component {
   };
   deleteFunc = () => {
     console.log("delete func working");
-    console.log(this.props.author);
+
     axios.delete(
       `https://frontend-nc-news.herokuapp.com/api/comments/${this.props.comment_id}` //passed down comment_id on props from the commentcard
     );
@@ -18,7 +18,10 @@ class DeleteComment extends React.Component {
   render() {
     return (
       <section>
-        <button onClick={this.deleteFunc} disabled={this.props.author !== User}>
+        <button
+          onClick={this.deleteFunc}
+          disabled={this.props.author !== this.props.userlogin}
+        >
           Delete Comment
         </button>
         {this.state.show && (

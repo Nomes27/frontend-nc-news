@@ -23,12 +23,19 @@ class Comments extends React.Component {
   }
 
   render() {
+    console.log(this.props.username);
     return (
       <>
         <h2 className="comments_title">Comments</h2>
         <AddComment id={this.props.id} />
         {this.state.comments.map((comment) => {
-          return <CommentCard comment={comment} />;
+          return (
+            <CommentCard
+              comment={comment}
+              key={comment.comment_id}
+              userlogin={this.props.userlogin}
+            />
+          );
         })}
       </>
     );
