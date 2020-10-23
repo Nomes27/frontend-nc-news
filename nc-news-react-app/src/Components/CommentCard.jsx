@@ -26,7 +26,7 @@ class CommentCard extends React.Component {
     const { comment } = this.props;
 
     return (
-      <section className="comments" key={comment.comment_id}>
+      <section className="comments">
         <h4>{comment.author}</h4>
 
         <p className="comments_body">{comment.body}</p>

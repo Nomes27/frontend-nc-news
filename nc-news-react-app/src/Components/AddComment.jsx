@@ -9,13 +9,18 @@ class AddComment extends React.Component {
   };
   onSubmit = (event) => {
     event.preventDefault();
-    axios.post(
-      `https://frontend-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`,
-      {
-        body: this.state.comment,
-        username: this.props.userlogin, //so author is the logged in user
-      }
-    );
+    axios
+      .post(
+        `https://frontend-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`,
+        {
+          body: this.state.comment,
+          username: this.props.userlogin, //so author is the logged in user
+        }
+      )
+      .then((res) => {
+        console.log(res.data.comment);
+        this.props.addCommentFunc(res.data.comment);
+      });
     this.setState({ comment: "", submitted: true });
   };
 
