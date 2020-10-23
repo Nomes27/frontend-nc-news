@@ -10,7 +10,7 @@
 .header {
   background-color: rgb(8, 16, 34); /*#081022*/
 
-  padding-top: 2rem;
+  padding-top: 3rem;
 } /*rgb(175, 165, 152); */ /*#AFA598*/
 
 footer {
@@ -59,21 +59,32 @@ footer {
 }
 .comments {
   background-color: rgb(224, 228, 230);
-  width: 70%;
+  width: 80%;
   margin: auto;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   margin-bottom: 1rem;
+  border-radius: 20px;
 }
 .comments_title {
   padding-top: 2rem;
 }
 .comments_body {
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 .comments_post {
   margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.comments_button {
+  background-color: #98af9e;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1rem;
+}
+.comments_text {
+  font-size: 1rem;
 }
 .errorMessage {
   color: rgb(175, 64, 64);
@@ -125,10 +136,14 @@ footer {
   font-size: 1.8rem;
 }
 .singleArticle {
-  width: 70%;
-  line-height: 2rem;
+  width: 85%;
   text-align: center;
   margin: auto;
+  border-radius: 20px;
+}
+.singleArticle_body {
+  font-size: 1rem;
+  line-height: 2rem;
 }
 .login_form {
   right: 1rem;
@@ -169,8 +184,19 @@ footer {
   right: 12rem;
   border-radius: 50%;
 }
+
 .deleteComment_message {
   color: red;
+}
+.votebutton {
+  border-radius: 12px;
+  background-color: white;
+  border: none;
+  margin: 5px;
+  border: rgb(192, 188, 188) solid 2px;
+}
+.votebutton:hover {
+  border: rgb(136, 135, 135) solid 2px;
 }
 @media (min-width: 700px) {
   .nav_home {
@@ -232,12 +258,23 @@ footer {
   }
   .comments {
     background-color: rgb(224, 228, 230);
+    width: 70%;
+  }
+  .comments_body {
+    width: 60%;
+    margin: auto;
   }
   .singleArticle {
     background-color: rgb(224, 228, 230);
     padding-bottom: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    width: 70%;
+  }
+  .singleArticle_body {
+    font-size: 1.2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
   .sortnavbar_link {
     font-size: 1.2rem;
@@ -246,7 +283,7 @@ footer {
     width: 9rem;
   }
   .login_avatar {
-    width: 2.5%;
+    width: 2%;
     top: 0.2rem;
     right: 14rem;
   }

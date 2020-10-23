@@ -36,7 +36,6 @@ class App extends React.Component {
           avatar: user.avatar_url,
         });
       });
-    //this.setState({ username: "" });
   };
 
   render() {
@@ -51,12 +50,13 @@ class App extends React.Component {
               onChange={this.handleChange}
             ></input>
 
-            <input
+            <button
               className="login_form_submit"
-              type="submit"
               value="Login"
               onClick={this.submitForm}
-            ></input>
+            >
+              Login
+            </button>
           </form>
           {this.state.signedin && (
             <>

@@ -31,7 +31,10 @@ class CommentCard extends React.Component {
 
         <p className="comments_body">{comment.body}</p>
         <h4>
-          <button onClick={() => this.alterVote(1, comment.comment_id)}>
+          <button
+            onClick={() => this.alterVote(1, comment.comment_id)}
+            className="votebutton"
+          >
             <ThumbUpIcon fontSize="small" style={{ fill: "green" }} />
           </button>
 
@@ -42,6 +45,7 @@ class CommentCard extends React.Component {
           )}
           <button
             onClick={() => this.alterVote(-1, this.props.comment.comment_id)}
+            className="votebutton"
           >
             <ThumbDownIcon fontSize="small" color="secondary" />
           </button>
