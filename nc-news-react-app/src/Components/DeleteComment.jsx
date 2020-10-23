@@ -20,6 +20,7 @@ class DeleteComment extends React.Component {
         <button
           onClick={this.deleteFunc}
           disabled={this.props.author !== this.props.userlogin}
+          className="delete_button"
         >
           Delete Comment
         </button>

@@ -55,7 +55,9 @@ class AddComment extends React.Component {
           )}
         </form>
         {this.state.submitted && (
-          <p>Your comment has been successfully posted</p>
+          <p className="successmessage">
+            Your comment has been successfully posted
+          </p>
         )}
       </>
     );

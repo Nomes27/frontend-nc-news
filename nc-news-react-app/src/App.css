@@ -39,6 +39,7 @@ footer {
 }
 .articleCard_author {
   font-size: 0.8rem;
+  color: #626e65;
 }
 .articleCard:hover {
   background-color: rgb(229, 226, 226);
@@ -198,6 +199,12 @@ footer {
 .votebutton:hover {
   border: rgb(136, 135, 135) solid 2px;
 }
+.delete_button {
+  margin-bottom: 5px;
+}
+.successmessage {
+  color: green;
+}
 @media (min-width: 700px) {
   .nav_home {
     position: absolute;
@@ -252,9 +259,13 @@ footer {
     margin: auto;
     background-color: white;
   }
+
   .App {
     /*background-color: rgb(200, 204, 204);*/
     background-image: url("./images/email-pattern.png");
+  }
+  .articleCard_author {
+    font-size: 1.1rem;
   }
   .comments {
     background-color: rgb(224, 228, 230);
@@ -280,11 +291,14 @@ footer {
     font-size: 1.2rem;
   }
   .login_form_text {
-    width: 9rem;
+    width: 10rem;
   }
   .login_avatar {
     width: 2%;
     top: 0.2rem;
     right: 14rem;
+  }
+  .login_message {
+    font-size: 1rem;
   }
 }
