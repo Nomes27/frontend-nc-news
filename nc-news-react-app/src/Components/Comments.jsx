@@ -36,11 +36,10 @@ class Comments extends React.Component {
   }
 
   render() {
-    console.log(this.props.username);
     return (
       <>
         <h2 className="comments_title">Comments</h2>
-        <AddComment id={this.props.id} />
+        <AddComment id={this.props.id} userlogin={this.props.userlogin} />
         {this.state.comments.map((comment) => {
           return (
             <CommentCard

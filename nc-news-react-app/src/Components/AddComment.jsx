@@ -4,7 +4,7 @@ class AddComment extends React.Component {
   //get id of article  this.props.id is the article_id which has been passed down from comments
   state = {
     comment: "",
-    username: "jessjelly",
+    //username:"jessjelly"
     submitted: false,
   };
   onSubmit = (event) => {
@@ -13,7 +13,7 @@ class AddComment extends React.Component {
       `https://frontend-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`,
       {
         body: this.state.comment,
-        username: this.state.username,
+        username: this.props.userlogin, //so author is the logged in user
       }
     );
     this.setState({ comment: "", submitted: true });
