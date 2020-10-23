@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import MessageIcon from "@material-ui/icons/Message";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 const ArticleCard = (props) => {
   return props.articles.map((article) => {
     return (
@@ -17,7 +18,9 @@ const ArticleCard = (props) => {
           <h4 className="articleCard_date">
             {String(new Date(article.created_at)).split("GMT")[0]}
           </h4>
-          <h5>Votes: {article.votes}</h5>
+          <h5 className="articleCard_votes">
+            {article.votes} <FavoriteIcon style={{ fill: "#98af9e" }} />
+          </h5>
           <h5 className="articleCard_comments">
             <MessageIcon />
             {article.comment_count} comments

@@ -52,6 +52,11 @@ footer {
 .articleCard_date {
   font-size: 0.8rem;
 }
+.articleCard_votes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .comments {
   background-color: rgb(224, 228, 230);
   width: 70%;
@@ -131,14 +136,24 @@ footer {
   position: absolute;
   display: flex;
   flex-direction: row;
+  height: 1.5rem;
+  border-radius: 25px;
 }
 .login_form_text {
   width: 7rem;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .login_form_submit {
   padding: 0.3rem;
   background-color: #98af9e;
   font-family: "Sintony", sans-serif;
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .login_message {
   color: white;
@@ -148,11 +163,10 @@ footer {
   font-size: 0.9rem;
 }
 .login_avatar {
-  width: 2.5%;
-  top: 0.2rem;
+  width: 7%;
+  top: 0.3rem;
   position: absolute;
-  right: 14rem;
-
+  right: 12rem;
   border-radius: 50%;
 }
 .deleteComment_message {
@@ -180,12 +194,14 @@ footer {
     position: absolute;
     display: flex;
     flex-direction: row;
+    height: 2rem;
   }
   .login_form_text {
     width: 7rem;
   }
   .login_form_submit {
     padding: 0.3rem;
+    font-size: 0.8rem;
   }
   .login_message {
     color: white;
@@ -197,6 +213,11 @@ footer {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 1rem;
+  }
+  .login_avatar {
+    width: 4%;
+    top: 0.2rem;
+    right: 12rem;
   }
 }
 @media (min-width: 1000px) {
@@ -223,5 +244,10 @@ footer {
   }
   .login_form_text {
     width: 9rem;
+  }
+  .login_avatar {
+    width: 2.5%;
+    top: 0.2rem;
+    right: 14rem;
   }
 }
