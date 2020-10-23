@@ -2,8 +2,6 @@ import React from "react";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
-import LogIn from "./Components/LogIn";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Router } from "@reach/router";
 import ArticlesList from "./Components/ArticlesList";
 import "./App.css";
