@@ -86,6 +86,7 @@ footer {
 }
 .comments_text {
   font-size: 1rem;
+  width: 6rem;
 }
 .errorMessage {
   color: rgb(175, 64, 64);
@@ -300,5 +301,9 @@ footer {
   }
   .login_message {
     font-size: 1rem;
+  }
+  .comments_text {
+    font-size: 1rem;
+    width: 15rem;
   }
 }

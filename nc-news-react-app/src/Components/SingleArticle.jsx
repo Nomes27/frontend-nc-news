@@ -58,7 +58,7 @@ class SingleArticle extends React.Component {
           >
             <ThumbUpIcon fontSize="small" style={{ fill: "green" }} />
           </button>
-          {this.state.article.votes + this.state.voteCount}
+          <b>{this.state.article.votes + this.state.voteCount}</b>
           <button
             onClick={() => this.alterVote(-1)}
             className="votebutton"
