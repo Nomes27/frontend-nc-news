@@ -3,11 +3,13 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
 import LogIn from "./Components/LogIn";
-import { Router, createHistory } from "@reach/router";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { Router } from "@reach/router";
 import ArticlesList from "./Components/ArticlesList";
 import "./App.css";
 import SingleArticle from "./Components/SingleArticle";
 import Error from "./Components/Error";
+import axios from "axios";
 
 class App extends React.Component {
   //needs state - so username can be stored in here
@@ -15,6 +17,8 @@ class App extends React.Component {
   state = {
     username: "",
     userlogin: "",
+    signedin: false,
+    avatar: "",
   }; //userlogin so captures username once button has been clicked and passes down on props, otherwise there is the option to delete comments before button has actually been clicked
   handleChange = (event) => {
     let value = event.target.value;
@@ -23,15 +27,21 @@ class App extends React.Component {
 
   submitForm = (event) => {
     event.preventDefault();
-
-    this.setState({ userlogin: this.state.username });
-
+    axios
+      .get(
+        `https://frontend-nc-news.herokuapp.com/api/users/${this.state.username}`
+      )
+      .then(({ data: { user } }) => {
+        this.setState({
+          userlogin: this.state.username,
+          signedin: true,
+          avatar: user.avatar_url,
+        });
+      });
     //this.setState({ username: "" });
   };
 
   render() {
-    console.log(this.state);
-
     return (
       <div className="App">
         <header className="header">
@@ -42,6 +52,7 @@ class App extends React.Component {
               placeholder="username"
               onChange={this.handleChange}
             ></input>
+
             <input
               className="login_form_submit"
               type="submit"
@@ -49,10 +60,23 @@ class App extends React.Component {
               onClick={this.submitForm}
             ></input>
           </form>
+          {this.state.signedin && (
+            <>
+              <p className="login_message">
+                You're logged in as {this.state.userlogin}
+              </p>
+              <img
+                className="login_avatar"
+                src={this.state.avatar}
+                alt="avatar of logged in user"
+              ></img>
+            </>
+          )}
 
           <Header />
           <NavBar />
         </header>
+
         <Router>
           <ArticlesList path="/" />
           <ArticlesList path="/articles/topics/:topic" />

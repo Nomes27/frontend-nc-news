@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import User from "../User";
 
 class DeleteComment extends React.Component {
   state = {

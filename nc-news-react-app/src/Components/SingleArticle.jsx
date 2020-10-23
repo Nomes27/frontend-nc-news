@@ -1,11 +1,14 @@
 import React from "react";
 import axios from "axios";
 import Comments from "./Comments";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 class SingleArticle extends React.Component {
   state = {
     article: {},
     isLoading: true,
     error: null,
+    voteCount: 0,
   };
   componentDidMount() {
     axios
@@ -24,8 +27,19 @@ class SingleArticle extends React.Component {
         });
       });
   }
+  alterVote = (voteValue) => {
+    this.setState((prevState) => ({
+      voteCount: prevState.voteCount + voteValue,
+    }));
+    axios.patch(
+      `https://frontend-nc-news.herokuapp.com/api/articles/${this.props.article_id}`,
+      {
+        inc_votes: voteValue,
+      }
+    );
+  };
+
   render() {
-    console.log(this.props.username);
     if (this.state.error !== null)
       return (
         <p className="errorMessage">
@@ -36,7 +50,15 @@ class SingleArticle extends React.Component {
     return (
       <>
         <article className="singleArticle">
-          <h1 className="singleArticle_title">{this.state.article.title}</h1>
+          <h2 className="singleArticle_title">{this.state.article.title}</h2>
+          <button onClick={() => this.alterVote(1)}>
+            <ThumbUpIcon fontSize="small" style={{ fill: "green" }} />
+          </button>
+          {this.state.article.votes + this.state.voteCount}
+          <button onClick={() => this.alterVote(-1)}>
+            <ThumbDownIcon fontSize="small" color="secondary" />
+          </button>
+
           <h3>{this.state.article.author}</h3>
           <p>{this.state.article.body}</p>
         </article>

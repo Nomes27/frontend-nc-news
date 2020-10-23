@@ -32,12 +32,9 @@ class ArticlesList extends React.Component {
   sortByFunc = (event) => {
     console.log("function working");
     axios
-      .get(
-        `https://frontend-nc-news.herokuapp.com/api/articles?sort_by=${event.target.value}`,
-        {
-          params: { topic: this.props.topic },
-        }
-      )
+      .get("https://frontend-nc-news.herokuapp.com/api/articles", {
+        params: { topic: this.props.topic, sort_by: event.target.value },
+      })
       .then(({ data: { articles } }) => {
         this.setState({ articles, isLoading: false });
       });
