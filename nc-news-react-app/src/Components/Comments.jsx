@@ -10,6 +10,19 @@ class Comments extends React.Component {
     comments: [],
   };
 
+  componentDidUpdate() {
+    //so that when new comment is added and a comment is deleted it is reflected on the page
+    axios
+      .get(
+        `https://frontend-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`
+      )
+      .then(({ data }) => {
+        //data off res
+
+        this.setState({ comments: data.comments });
+      });
+  }
+
   componentDidMount() {
     axios
       .get(

@@ -18,7 +18,6 @@ class AddComment extends React.Component {
     );
     this.setState({ comment: "", submitted: true });
   };
-  //could do with a message to tell usertheir comment has been submitted
 
   handleChange = (event) => {
     this.setState({ comment: event.target.value });
