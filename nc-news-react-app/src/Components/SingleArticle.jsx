@@ -51,11 +51,19 @@ class SingleArticle extends React.Component {
       <>
         <article className="singleArticle">
           <h2 className="singleArticle_title">{this.state.article.title}</h2>
-          <button onClick={() => this.alterVote(1)} className="votebutton">
+          <button
+            onClick={() => this.alterVote(1)}
+            className="votebutton"
+            disabled={this.state.voteCount === 1}
+          >
             <ThumbUpIcon fontSize="small" style={{ fill: "green" }} />
           </button>
           {this.state.article.votes + this.state.voteCount}
-          <button onClick={() => this.alterVote(-1)} className="votebutton">
+          <button
+            onClick={() => this.alterVote(-1)}
+            className="votebutton"
+            disabled={this.state.voteCount === 1}
+          >
             <ThumbDownIcon fontSize="small" color="secondary" />
           </button>
 

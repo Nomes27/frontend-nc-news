@@ -34,6 +34,7 @@ class CommentCard extends React.Component {
           <button
             onClick={() => this.alterVote(1, comment.comment_id)}
             className="votebutton"
+            disabled={this.state.voteCount === 1}
           >
             <ThumbUpIcon fontSize="small" style={{ fill: "green" }} />
           </button>
@@ -45,6 +46,7 @@ class CommentCard extends React.Component {
           )}
           <button
             onClick={() => this.alterVote(-1, this.props.comment.comment_id)}
+            disabled={this.state.voteCount === 1}
             className="votebutton"
           >
             <ThumbDownIcon fontSize="small" color="secondary" />
