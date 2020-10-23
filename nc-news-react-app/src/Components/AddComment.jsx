@@ -34,7 +34,15 @@ class AddComment extends React.Component {
             onChange={this.handleChange}
             value={this.state.comment}
           ></input>
-          <input type="submit" value="Submit" onClick={this.onSubmit}></input>
+          <input
+            type="submit"
+            value="Submit"
+            onClick={this.onSubmit}
+            disabled={!this.props.signedin} //signedin passed down on props-if not signed in, need to sign in to post comment
+          ></input>
+          {!this.props.signedin && (
+            <p>You must be signed in to post a comment.</p>
+          )}
         </form>
         {this.state.submitted && (
           <p>Your comment has been successfully posted</p>

@@ -83,6 +83,7 @@ class App extends React.Component {
 
           <SingleArticle
             userlogin={this.state.userlogin}
+            signedin={this.state.signedin}
             path="/articles/:article_id"
           />
           <Error default />

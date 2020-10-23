@@ -65,6 +65,7 @@ class SingleArticle extends React.Component {
         <Comments
           id={this.state.article.article_id}
           userlogin={this.props.userlogin}
+          signedin={this.props.signedin}
         />
       </>
     );
