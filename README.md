@@ -14,3 +14,5 @@ There are certain features in the app which are restricted to logged in users, f
 Comments and articles can be voted on once a specific article has been clicked on. This will update the comment count and vote count for each article. 
 <br>Articles can be filtered down by selecting a specific topic, i.e. 'football'
 <br>Articles can also be sorted by 'newest', 'most commented' and 'most liked'
+
+Find the deployed site here : https://nc-news-coding-news.netlify.app/
