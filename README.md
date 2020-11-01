@@ -4,6 +4,7 @@
 
 There are certain features in the app which are restricted to logged in users, for example you must log in to post a comment and only logged in users can delete a comment they have posted. 
 <br>__There are several default users available to login as, these are:__ 
+- jessjelly
 - tickle122
 - grumpy19
 - happyamy2016
